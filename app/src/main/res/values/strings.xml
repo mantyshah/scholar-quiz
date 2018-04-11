@@ -2,4 +2,12 @@
     <string name="app_name">Scholar Quiz</string>
     <string name="login_prferance">org.sairaa.scholarquiz.login_preference</string>
     <string name="login_status_preference">org.sairaa.scholarquiz.login_status_preference</string>
+    <string name="application_logo">Application Logo</string>
+    <string name="login">Login</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Register</string>
+    <string name="forgot_password">Forgot Password ?</string>
 </resources>
