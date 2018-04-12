@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private SharedPreferenceConfig sharedPreferenceConfig;
@@ -49,8 +50,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
                 else
                 {
-
+                    Toast.makeText(getApplicationContext(), "Please Enter Email or Password.", Toast.LENGTH_SHORT).show();
                 }
+                break;
             default:
         }
     }
