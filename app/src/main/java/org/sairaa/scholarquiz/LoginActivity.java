@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         register = findViewById(R.id.register);
         register.setOnClickListener(this);
 
-        forgotPassword = findViewById(R.id.forgot_password_login);
+        forgotPassword = findViewById(R.id.forgotPassword_TextView);
         forgotPassword.setOnClickListener(this);
 
         email = findViewById(R.id.email_login);
@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(getApplicationContext(), "Please Enter Email or Password.", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case R.id.forgot_password_login:
+            case R.id.forgotPassword_TextView:
                 break;
 
             default:
