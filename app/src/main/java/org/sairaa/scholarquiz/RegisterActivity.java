@@ -8,12 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText name,emailId,slackId,password,conPasword,info;
+    private EditText name, emailId, slackId, password, conPasword, info;
     private Button registerB;
     // Alert dialog
     AlertDialog.Builder alertBuilder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +37,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.register_reg:
                 // Check all requir field empty or not
-                if(name.getText().toString().equals("")
+                if (name.getText().toString().equals("")
                         || emailId.getText().toString().equals("")
                         || slackId.getText().toString().equals("")
                         || password.getText().toString().equals("")
@@ -53,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     });
                     AlertDialog alertDialog = alertBuilder.create();
                     alertDialog.show();
-                }else if(!(password.getText().toString().equals(conPasword.getText().toString()))){
+                } else if (!(password.getText().toString().equals(conPasword.getText().toString()))) {
                     //check pasword and confirm pasword mismatch
                     alertBuilder = new AlertDialog.Builder(RegisterActivity.this);
                     alertBuilder.setTitle("Something Wrong");
@@ -68,16 +72,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     });
                     AlertDialog alertDialog = alertBuilder.create();
                     alertDialog.show();
-                }else{
+                } else {
                     // Background task to insert user information into database
                     BackgroundLoginTask backgroundLoginTask = new BackgroundLoginTask(RegisterActivity.this);
-                    backgroundLoginTask.execute("register",name.getText().toString(),
-                                                emailId.getText().toString(),
-                                                slackId.getText().toString(),
-                                                password.getText().toString(),
-                                                info.getText().toString());
+                    backgroundLoginTask.execute("register", name.getText().toString(),
+                            emailId.getText().toString(),
+                            slackId.getText().toString(),
+                            password.getText().toString(),
+                            info.getText().toString());
                 }
                 break;
         }
+
     }
 }
+
