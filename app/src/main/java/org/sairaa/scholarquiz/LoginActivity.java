@@ -42,9 +42,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(LoginActivity.this,RegisterActivity.class) );
                 break;
             case R.id.signin_login:
-                BackgroundLoginTask backgroundLoginTask = new BackgroundLoginTask(LoginActivity.this);
-                backgroundLoginTask.execute("login",email.getText().toString(),password.getText().toString());
-                break;
+                if(!email.getText().toString().equals("") && !password.getText().toString().equals("")) {
+                    BackgroundLoginTask backgroundLoginTask = new BackgroundLoginTask(LoginActivity.this);
+                    backgroundLoginTask.execute("login", email.getText().toString(), password.getText().toString());
+                    break;
+                }
+                else
+                {
+
+                }
             default:
         }
     }
