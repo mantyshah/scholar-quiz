@@ -23,7 +23,8 @@
             android:layout_gravity="center"
             android:text="@string/regHeading"
             android:textColor="#fdfdfe"
-            android:textSize="24sp"/>
+            android:textSize="24sp"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/name_reg"
