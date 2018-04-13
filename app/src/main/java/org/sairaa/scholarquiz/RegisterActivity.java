@@ -8,15 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText name, emailId, slackId, password, conPasword, info;
-    private Button registerB;
+    Button registerB;
     // Alert dialog
     AlertDialog.Builder alertBuilder;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +46,25 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     // if any of the required field empty "Show Dialog to fill the required field
                     alertBuilder = new AlertDialog.Builder(RegisterActivity.this);
                     alertBuilder.setTitle("Something Wrong");
-                    alertBuilder.setMessage("Please Fill all required field");
+                    alertBuilder.setMessage("Please Fill All Required Field");
                     alertBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.dismiss();
+                        }
+                    });
+                    AlertDialog alertDialog = alertBuilder.create();
+                    alertDialog.show();
+                }else if(!emailId.getText().toString().matches(emailPattern))
+                {
+                    alertBuilder = new AlertDialog.Builder(RegisterActivity.this);
+                    alertBuilder.setTitle("Something Wrong");
+                    alertBuilder.setMessage("Please check the email id. Email ID should be in proper form.");
+                    alertBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                            emailId.setText("");
                         }
                     });
                     AlertDialog alertDialog = alertBuilder.create();
