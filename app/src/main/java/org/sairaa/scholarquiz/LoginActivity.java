@@ -48,6 +48,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.signin_login:
 
+                if(!email.getText().toString().equals("") && !password.getText().toString().equals("")) {
+                    BackgroundLoginTask backgroundLoginTask = new BackgroundLoginTask(LoginActivity.this);
+                    backgroundLoginTask.execute("login", email.getText().toString(), password.getText().toString());
+                    break;
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Please Enter Email or Password.", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.forgotPassword_TextView:
+
+
                 if(email.getText().toString().equals("")
                         || password.getText().equals("")){
                     alertBuilder = new AlertDialog.Builder(LoginActivity.this);
