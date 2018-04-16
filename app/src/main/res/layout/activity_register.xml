@@ -25,47 +25,6 @@
             android:fontFamily="@font/google_sans_bold"
             android:text="@string/regHeading"
             android:textColor="?android:attr/textColorPrimary"
-            android:textColor="#fdfdfe"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:id="@+id/name_reg"
-            style="@style/editTextStyle"
-            android:hint="@string/user_name"
-            android:inputType="textCapWords"/>
-        <EditText
-            android:id="@+id/email_reg"
-            style="@style/editTextStyle"
-            android:hint="@string/reg_Email_id"
-            android:inputType="textEmailAddress" />
-        <EditText
-            android:id="@+id/slackid_reg"
-            style="@style/editTextStyle"
-            android:hint="@string/slack_id"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/password_reg"
-            style="@style/editTextStyle"
-            android:hint="@string/password1"
-            android:inputType="textPassword" />
-        <EditText
-            android:id="@+id/confirm_password_reg"
-            style="@style/editTextStyle"
-            android:hint="@string/password2"
-            android:inputType="textPassword" />
-        <EditText
-            android:id="@+id/info_reg"
-            style="@style/editTextStyle"
-            android:hint="@string/additional_info"
-            android:inputType="textLongMessage"/>
-
-        <Button
-            android:id="@+id/register_reg"
-            style="@style/buttonStyle"
-            android:text="@string/signup" />
-      android:textColor="?android:attr/textColorPrimary"
             android:textSize="30sp" />
 
         <LinearLayout

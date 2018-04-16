@@ -36,13 +36,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         switch (view.getId()){
             case R.id.register_reg:
                 // Check all requir field empty or not
-
-                if (name.getText().toString().equals("")
-                        || emailId.getText().toString().equals("")
-                        || slackId.getText().toString().equals("")
-                        || password.getText().toString().equals("")
-                        || conPasword.getText().toString().equals("")) {
-
                 //Apply the validation in each field including slack Id
                 if(name.getText().toString().length()==0) {
                     name.setError("Name cannot be blank");
@@ -88,7 +81,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 }else{
                     // Background task to insert user information into database
                     BackgroundLoginTask backgroundLoginTask = new BackgroundLoginTask(RegisterActivity.this);
-                    backgroundLoginTask.execute("register", name.getText().toString(),
                     backgroundLoginTask.execute("register",name.getText().toString(),
                             emailId.getText().toString(),
                             slackId.getText().toString(),
@@ -98,5 +90,4 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 break;
         }
     }
-}
 }
