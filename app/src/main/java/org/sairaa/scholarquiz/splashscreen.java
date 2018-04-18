@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 public class splashscreen extends AppCompatActivity implements View.OnClickListener {
 
-    private Button joinNow, login;
-    private ImageView appIcon;
-    private TextView punchLine;
+    Button joinNow, login;
+    ImageView appIcon;
+    TextView punchLine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
