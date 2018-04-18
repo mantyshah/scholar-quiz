@@ -20,4 +20,6 @@
     <string name="alreadyUser">Already a User?</string>
     <string name="loginHere">Sign In</string>
     <string name="punchLine">Tracking the progress of \nSlack Quiz's</string>
+    <string name="signUpButton">Sign Up</string>
+    <string name="loginButton">Have An Account? Login</string>
 </resources>
