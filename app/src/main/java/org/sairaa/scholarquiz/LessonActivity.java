@@ -21,8 +21,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import org.sairaa.scholarquiz.data.QuizDbHelper;
 import org.sairaa.scholarquiz.data.QuizContract.*;
+import org.sairaa.scholarquiz.ui.Login.LoginActivity;
 
 public class LessonActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
 

@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.sairaa.scholarquiz.ui.Register.RegisterActivity;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private final String LOG_LOGIN = "LoginActivity";
     private SharedPreferenceConfig sharedPreferenceConfig;
