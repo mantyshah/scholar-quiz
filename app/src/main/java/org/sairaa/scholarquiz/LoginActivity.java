@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.sairaa.scholarquiz.ui.Lesson.LessonActivity;
 import org.sairaa.scholarquiz.ui.Register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
