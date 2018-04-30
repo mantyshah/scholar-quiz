@@ -21,11 +21,14 @@ import org.sairaa.scholarquiz.ui.Login.LoginActivity;
 import org.sairaa.scholarquiz.R;
 import org.sairaa.scholarquiz.model.RegisterModel;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 public class RegisterActivity extends AppCompatActivity
         implements View.OnClickListener, RegisterMVPView{
 
     private EditText name,emailId,slackId,password,conPasword,info;
-    private Button registerB;
+    private Button registerB, registerSingIn;
     // Alert dialog
     AlertDialog.Builder alertBuilder;
     ProgressDialog progressDialog;
@@ -44,6 +47,8 @@ public class RegisterActivity extends AppCompatActivity
         conPasword = findViewById(R.id.confirm_password_reg);
         info = findViewById(R.id.info_reg);
         registerB = findViewById(R.id.register_button);
+        registerSingIn = findViewById(R.id.register_sign_in);
+        registerSingIn.setOnClickListener(this);
         //set register to onClick event
         registerB.setOnClickListener(this);
         registerMVPView = (RegisterMVPView) this;
@@ -115,6 +120,9 @@ public class RegisterActivity extends AppCompatActivity
 
                 }
                 break;
+            case R.id.register_sign_in:
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+            break;
 
         }
 
@@ -135,6 +143,44 @@ public class RegisterActivity extends AppCompatActivity
     }
 
     @Override
+    public void authtication(String email, String password) {
+        AppInfo.firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    String udid = task.getResult().getUser().getUid();
+                    AppInfo.firebaseAuth.signOut();
+                    String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+                    RegisterModel registerModel = new RegisterModel(slackId.getText().toString().trim(),
+                            name.getText().toString().trim(),currentDateTimeString);
+                    registerMVPView.authenticationSucced(udid,registerModel);
+                }else {
+                    //display some message here
+                    registerMVPView.authenticationFailed(task.getException());
+
+                }
+            }
+        });
+    }
+
+    @Override
+    public void authenticationSucced(String udid, final RegisterModel model) {
+
+        AppInfo.databaseReference.child("Users").child(udid).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    registerMVPView.hideDialog();
+                    finish();
+                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+//                    Toast.makeText(RegisterActivity.this, "login Email: "+model.getName(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+    }
+
+   /* @Override
     public void authtication(String email, String password) {
         AppInfo.firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -163,9 +209,9 @@ public class RegisterActivity extends AppCompatActivity
                         }
                     }
                 });
-    }
+    }*/
 
-    @Override
+   /* @Override
     public void authenticationSucced(String udid, RegisterModel model) {
 
         AppInfo.databaseReference.child("user_info").child(udid).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -179,7 +225,7 @@ public class RegisterActivity extends AppCompatActivity
                 }
             }
         });
-    }
+    }*/
 
 
     @Override
