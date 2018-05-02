@@ -37,7 +37,7 @@
                 android:id="@+id/alreadyPublishedTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:textAlignment="center"
                 android:text="@string/modAlredyPublished"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
@@ -74,21 +74,32 @@
             android:layout_marginTop="10dp"
             android:layout_weight="3"
             android:orientation="vertical"
-            android:padding="5dp">
+            >
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:textAlignment="center"
                 android:text="@string/modQuizNotPublished"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@android:color/black"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_marginTop="5dp"
+                >
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2">
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                >
 
                 <TextView
                     android:id="@+id/quiz_not_published_textview"
@@ -100,7 +111,7 @@
                     android:textSize="15sp" />
 
             </ScrollView>
-
+            </LinearLayout>
         </LinearLayout>
         <View
             android:layout_width="match_parent"
