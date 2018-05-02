@@ -26,6 +26,7 @@ import android.widget.Toast;
 import org.sairaa.scholarquiz.data.QuizDbHelper;
 import org.sairaa.scholarquiz.data.QuizContract.*;
 import org.sairaa.scholarquiz.ui.Login.LoginActivity;
+import org.sairaa.scholarquiz.ui.Subscription.SubscribeActivity;
 
 public class LessonActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
 
