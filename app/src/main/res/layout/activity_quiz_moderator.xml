@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Moderator.QuizModeratorActivity">
+    tools:context=".ui.Moderator.QuizModeratorActivity"
+    android:background="@drawable/headerbackgroundwall2">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/headerbackgroundwall2"
         android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +29,8 @@
             android:id="@+id/quizAlreadyPublished"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
             >
 
             <TextView
@@ -54,7 +55,9 @@
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:layout_weight="6"
-            android:padding="10dp"
+            android:padding="5dp"
+            android:dividerHeight="2dp"
+            android:divider="#212121"
             >
 
         </ListView>
@@ -71,7 +74,7 @@
             android:layout_marginTop="10dp"
             android:layout_weight="3"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="5dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -110,7 +113,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:padding="4dp">
+            android:layout_marginTop="5dp"
+            >
 
             <EditText
                 android:id="@+id/mod_new_quiz_name_edittext"
@@ -121,7 +125,7 @@
                 android:inputType="text"
                 android:textColor="@android:color/black"
                 android:textColorHint="@android:color/black"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginStart="0dp"
                 />
 
@@ -129,7 +133,7 @@
                 android:id="@+id/go_create_new_quiz_button"
                 style="@style/buttonStyle"
                 android:layout_marginEnd="0dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="5dp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

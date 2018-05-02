@@ -36,6 +36,9 @@
     <string name="modQuizNameHint">Type New Quiz Name and Go</string>
     <string name="modQuizNotPublished">Not Published</string>
     <string name="modAlredyPublished">Already Published</string>
+    <string name="questionsListTextView">Questions</string>
+    <string name="addNewQuestionButton">Add New Question</string>
+    <string name="publishButton">publish</string>
     <string-array name="mod_correct_answer">
         <item>1</item>
         <item>2</item>
